@@ -29,7 +29,10 @@ async function saveData(data) {
   }
 }
 // ========== login... ==========
-const users = [{ username: "fgp555", password: "Electron5.pe" }];
+const username = process.env.USER;
+const password = process.env.PASSWORD;
+const users = [{ username, password }];
+// console.log(users)
 
 shortenerApp.get("/admin", (req, res) => {
   res.sendFile(__dirname + "/private/admin-login.html");
